@@ -6,7 +6,13 @@ GET {{BASE_URL}}/health
 
 ### auth - register user
 POST {{BASE_URL}}/api/auth/register
+Content-Type: application/json
 
+{
+    "name": "",
+    "email": "",
+    "password": ""
+}
 
 ### auth - email sign in
 POST {{BASE_URL}}/api/auth/sign-in/email
