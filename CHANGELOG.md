@@ -2,17 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.2.1](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.0...v0.2.1) (2026-06-13)
+### [0.2.2](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.1...v0.2.2) (2026-06-14)
 
 
 ### Features
 
-* add better-auth packages ([e9c99aa](https://github.com/monsurcodes/AttendEase-Server/commit/e9c99aa3e3a88ebfff2d853d05b402d34e85c680))
-* add better-auth tables ([4211aa0](https://github.com/monsurcodes/AttendEase-Server/commit/4211aa06bcf07fee0eabdcc29394ca4016cad620))
-* add clean:info script with rimraf to fix server build error ([e398527](https://github.com/monsurcodes/AttendEase-Server/commit/e3985277af5cb6e43e9384b11160c7178bf8635c))
-* better-auth config file ([1dfe4ec](https://github.com/monsurcodes/AttendEase-Server/commit/1dfe4ecd289340355426314a6fd4f3b5d3490d9d))
-* disbale bodyParser for better-auth to work ([136d67b](https://github.com/monsurcodes/AttendEase-Server/commit/136d67bfa5ac70c050446b8d76c46e2ef4c2ba30))
-* replace jwt config with better-auth config ([616cc11](https://github.com/monsurcodes/AttendEase-Server/commit/616cc11eb091ef9bc1f5e5c541aa0ab5fe0ff420))
+* add '/' endpoint ([de624c4](https://github.com/monsurcodes/AttendEase-Server/commit/de624c4fc05b7e96e963df14d48a780ad58e85f8))
+* add email service ([576e40f](https://github.com/monsurcodes/AttendEase-Server/commit/576e40f8615a5cfb224fe248a715107f6f6f61c6))
+* add nodemailer for email services ([48e3273](https://github.com/monsurcodes/AttendEase-Server/commit/48e327361c49d593ee717cb11c72a2b160b74e9a))
+* add other required schema models ([c7aecdc](https://github.com/monsurcodes/AttendEase-Server/commit/c7aecdc8dfb35c347810611a63e8270d42b93774))
+* add project-snapshot.md ([9f61950](https://github.com/monsurcodes/AttendEase-Server/commit/9f619505f90d92259400331d776aacbe502d49d6))
+* chnage sourceType from commonjs to module ([86e9a37](https://github.com/monsurcodes/AttendEase-Server/commit/86e9a375d1842b0e4fa99840206f3257c5ee576e))
+* fix endpoints ([408eb79](https://github.com/monsurcodes/AttendEase-Server/commit/408eb79ef16b36c3b0a9c750de4e4aa1fdb482bd))
+* get endpoint to fetch auth user data ([f738cd7](https://github.com/monsurcodes/AttendEase-Server/commit/f738cd79a01c208526c15ec41127ab904044daa5))
+
+
+### Bug Fixes
+
+* better-auth instance type annotation failure ([3a047c9](https://github.com/monsurcodes/AttendEase-Server/commit/3a047c9341d39347f827671485283cc9e7d0f6d0))
+
+### [0.2.1](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.0...v0.2.1) (2026-06-13)
+
+### Features
+
+- add better-auth packages ([e9c99aa](https://github.com/monsurcodes/AttendEase-Server/commit/e9c99aa3e3a88ebfff2d853d05b402d34e85c680))
+- add better-auth tables ([4211aa0](https://github.com/monsurcodes/AttendEase-Server/commit/4211aa06bcf07fee0eabdcc29394ca4016cad620))
+- add clean:info script with rimraf to fix server build error ([e398527](https://github.com/monsurcodes/AttendEase-Server/commit/e3985277af5cb6e43e9384b11160c7178bf8635c))
+- better-auth config file ([1dfe4ec](https://github.com/monsurcodes/AttendEase-Server/commit/1dfe4ecd289340355426314a6fd4f3b5d3490d9d))
+- disbale bodyParser for better-auth to work ([136d67b](https://github.com/monsurcodes/AttendEase-Server/commit/136d67bfa5ac70c050446b8d76c46e2ef4c2ba30))
+- replace jwt config with better-auth config ([616cc11](https://github.com/monsurcodes/AttendEase-Server/commit/616cc11eb091ef9bc1f5e5c541aa0ab5fe0ff420))
 
 ## [0.2.0](https://github.com/monsurcodes/AttendEase-Server/compare/v0.1.2...v0.2.0) (2026-06-09)
 
