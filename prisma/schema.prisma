@@ -8,16 +8,33 @@ datasource db {
   provider = "postgresql"
 }
 
+enum Role {
+  ADMIN
+  MEMBER
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  CANCELLED
+}
+
 model User {
-  id            String    @id
+  id            String   @id
   name          String
-  email         String    @unique
-  emailVerified Boolean   @default(false)
+  email         String   @unique
+  emailVerified Boolean  @default(false)
   image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  accounts      Account[]
-  sessions      Session[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  accounts     Account[]
+  sessions     Session[]
+  memberships  RoomMember[]
+  createdRooms Room[]       @relation("AdminRooms")
+  votes        PollVote[]
+  attendance   Attendance[]
 
   @@map("user")
 }
@@ -67,4 +84,100 @@ model Verification {
 
   @@index([identifier])
   @@map("verification")
+}
+
+model Room {
+  id         String   @id @default(uuid())
+  name       String
+  inviteCode String   @unique
+  adminId    String
+  createdAt  DateTime @default(now())
+
+  // Relations
+  admin     User         @relation("AdminRooms", fields: [adminId], references: [id])
+  members   RoomMember[]
+  timetable Timetable[]
+  polls     BunkPoll[]
+
+  @@map("room")
+}
+
+model RoomMember {
+  id         String   @id @default(uuid())
+  roomId     String
+  userId     String
+  role       Role     @default(MEMBER)
+  isApproved Boolean  @default(false)
+  joinedAt   DateTime @default(now())
+
+  room Room @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([roomId, userId])
+  @@map("room_member")
+}
+
+model Timetable {
+  id          String @id @default(uuid())
+  roomId      String
+  subjectName String
+  dayOfWeek   Int
+  startTime   String
+  endTime     String
+  latitude    Float?
+  longitude   Float?
+  radius      Float?
+
+  room       Room         @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  attendance Attendance[]
+  polls      BunkPoll[]
+
+  @@map("timetable")
+}
+
+model Attendance {
+  id          String           @id @default(uuid())
+  userId      String
+  timetableId String
+  date        DateTime
+  status      AttendanceStatus @default(PRESENT)
+  isManual    Boolean          @default(false)
+  updatedAt   DateTime         @updatedAt
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  timetable Timetable @relation(fields: [timetableId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, timetableId, date])
+  @@map("attendance")
+}
+
+model BunkPoll {
+  id          String   @id @default(uuid())
+  roomId      String
+  timetableId String
+  date        DateTime
+  threshold   Int      @default(70)
+  expiresAt   DateTime
+  isLocked    Boolean  @default(false)
+
+  room      Room       @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  timetable Timetable  @relation(fields: [timetableId], references: [id], onDelete: Cascade)
+  votes     PollVote[]
+
+  @@unique([timetableId, date])
+  @@map("bunk_poll")
+}
+
+model PollVote {
+  id           String   @id @default(uuid())
+  pollId       String
+  userId       String
+  supportsBunk Boolean
+  createdAt    DateTime @default(now())
+
+  poll BunkPoll @relation(fields: [pollId], references: [id], onDelete: Cascade)
+  user User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([pollId, userId])
+  @@map("poll_vote")
 }
