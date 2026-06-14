@@ -1,6 +1,6 @@
 @BASE_URL=http://localhost:3000
 
-@accessToken=b8YKnumUEErU54z9953wkfmPvEeB6Cis.GfyareMHFMtx6Bbfz2hp2LaGakdMBrpRuefQWnA6bQY=
+@accessToken=v7AUtnwfKfC3mLBI84y7S2tbvhBTzrfL.fwSmC+mP3NnioBIXVzg9Vidj9r08ZZI1lBKTmZ1/kVA=
 
 ### server health
 GET {{BASE_URL}}/health
@@ -11,27 +11,28 @@ POST {{BASE_URL}}/api/auth/sign-up/email
 Content-Type: application/json
 
 {
-    "name": "Vidoh",
-    "email": "vidoh93084@fanchatu.com",
+    "name": "Pocorib",
+    "email": "pocorib849@ocuser.com",
     "password": "Pass@123"
 }
+
 
 ### auth - email sign in
 POST {{BASE_URL}}/api/auth/sign-in/email
 Content-Type: application/json
 
 {
-    "email": "vidoh93084@fanchatu.com",
+    "email": "pocorib849@ocuser.com",
     "password": "Pass@123"
 }
 
-### auth - username sign in
-POST {{BASE_URL}}/api/auth/sign-in/username
-Content-Type: application/json
-
-{}
 
 ### auth - sign out
 POST {{BASE_URL}}/api/auth/sign-out
+Authorization: Bearer {{accessToken}}
+
+
+### user - get me
+GET {{BASE_URL}}/api/user
 Authorization: Bearer {{accessToken}}
 
