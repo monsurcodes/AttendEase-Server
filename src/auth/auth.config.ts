@@ -11,18 +11,42 @@ const adapter = new PrismaPg(pool);
 
 const prisma = new PrismaClient({ adapter });
 
+export const authExtensions = {
+  sendEmail: null as
+    | null
+    | ((to: string, url: string, name: string) => Promise<void>),
+};
+
 export const auth = betterAuth({
+  baseURL: process.env.BASE_URL,
+
   database: prismaAdapter(prisma, {
     provider: 'postgresql',
   }),
+
   emailAndPassword: {
     enabled: true,
   },
+
+  emailVerification: {
+    sendOnSignUp: true,
+    async sendVerificationEmail({ user, url }) {
+      if (authExtensions.sendEmail) {
+        await authExtensions.sendEmail(user.email, url, user.name);
+      } else {
+        console.warn('Email extension hook not registered yet.');
+      }
+    },
+  },
+
   plugins: [bearer()],
+
   hooks: {},
+
   trustedOrigins: [],
+
   advanced: {
-    disableOriginCheck: true, // <-- Make sure to remove this in prod
-    useSecureCookies: true,
+    disableOriginCheck: process.env.NODE_ENV !== 'production',
+    useSecureCookies: process.env.NODE_ENV === 'production',
   },
 });
