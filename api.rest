@@ -1,6 +1,6 @@
 @BASE_URL=http://localhost:3000
 
-@accessToken=v7AUtnwfKfC3mLBI84y7S2tbvhBTzrfL.fwSmC+mP3NnioBIXVzg9Vidj9r08ZZI1lBKTmZ1/kVA=
+@accessToken=Pi8l1mhL8tyntqaDC0VsPTpioV3TBAsR.Q4cQkbtC3mMLeEHhlFYt8/KH7JzkBphvwoBz0nrXGng=
 
 ### server health
 GET {{BASE_URL}}/health
@@ -11,8 +11,8 @@ POST {{BASE_URL}}/api/auth/sign-up/email
 Content-Type: application/json
 
 {
-    "name": "Pocorib",
-    "email": "pocorib849@ocuser.com",
+    "name": "Sarixim",
+    "email": "sarixim159@synsky.com",
     "password": "Pass@123"
 }
 
@@ -35,4 +35,26 @@ Authorization: Bearer {{accessToken}}
 ### user - get me
 GET {{BASE_URL}}/api/user
 Authorization: Bearer {{accessToken}}
+
+
+### room - create room
+POST {{BASE_URL}}/api/room/create
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "name": "Test room",
+    "adminId": "O7KJePDCcqwHWrl7C14qQza2CkvwO5Ag"
+}
+
+
+### room - join room
+POST {{BASE_URL}}/api/room/join
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "inviteCode": "FBN4LC"
+}
+
 

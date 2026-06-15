@@ -2,24 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.2.2](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.1...v0.2.2) (2026-06-14)
+### [0.2.3](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.2...v0.2.3) (2026-06-15)
 
 
 ### Features
 
-* add '/' endpoint ([de624c4](https://github.com/monsurcodes/AttendEase-Server/commit/de624c4fc05b7e96e963df14d48a780ad58e85f8))
-* add email service ([576e40f](https://github.com/monsurcodes/AttendEase-Server/commit/576e40f8615a5cfb224fe248a715107f6f6f61c6))
-* add nodemailer for email services ([48e3273](https://github.com/monsurcodes/AttendEase-Server/commit/48e327361c49d593ee717cb11c72a2b160b74e9a))
-* add other required schema models ([c7aecdc](https://github.com/monsurcodes/AttendEase-Server/commit/c7aecdc8dfb35c347810611a63e8270d42b93774))
-* add project-snapshot.md ([9f61950](https://github.com/monsurcodes/AttendEase-Server/commit/9f619505f90d92259400331d776aacbe502d49d6))
-* chnage sourceType from commonjs to module ([86e9a37](https://github.com/monsurcodes/AttendEase-Server/commit/86e9a375d1842b0e4fa99840206f3257c5ee576e))
-* fix endpoints ([408eb79](https://github.com/monsurcodes/AttendEase-Server/commit/408eb79ef16b36c3b0a9c750de4e4aa1fdb482bd))
-* get endpoint to fetch auth user data ([f738cd7](https://github.com/monsurcodes/AttendEase-Server/commit/f738cd79a01c208526c15ec41127ab904044daa5))
+* add endpoints like /room/create and /room/join ([6230fb3](https://github.com/monsurcodes/AttendEase-Server/commit/6230fb380630bf255b9cef8d3c4099da40c0d4f0))
+* add room module ([c6938b4](https://github.com/monsurcodes/AttendEase-Server/commit/c6938b4e3848bf8a4677f016ce89a38beb83c1e9))
+* add room service methods ([1ac61c1](https://github.com/monsurcodes/AttendEase-Server/commit/1ac61c15b3cc7813de99fc37dc000be6aa188351))
+* add zod validator ([f6b71af](https://github.com/monsurcodes/AttendEase-Server/commit/f6b71afc1a3d56f985a7ebb53720f5de3dc11326))
+* create-room-dto ([fe0cfd2](https://github.com/monsurcodes/AttendEase-Server/commit/fe0cfd278ea6719946ad2b70546fcc69492b6a51))
+* init room module ([450c7d7](https://github.com/monsurcodes/AttendEase-Server/commit/450c7d748fd91fc25e23f504133de53b3fc5f7ff))
+* join-room-dto ([cd5c32c](https://github.com/monsurcodes/AttendEase-Server/commit/cd5c32cfa590c566fe114bd401d3c3791305af5b))
+* new test endpoints ([1201207](https://github.com/monsurcodes/AttendEase-Server/commit/1201207fdcaa893d05161127cd353445922103d2))
+* set zod validation pipe globally to app ([4ebb86a](https://github.com/monsurcodes/AttendEase-Server/commit/4ebb86a9167d6ad60c6cb171138107c458c242a0))
 
+### [0.2.2](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.1...v0.2.2) (2026-06-14)
+
+### Features
+
+- add '/' endpoint ([de624c4](https://github.com/monsurcodes/AttendEase-Server/commit/de624c4fc05b7e96e963df14d48a780ad58e85f8))
+- add email service ([576e40f](https://github.com/monsurcodes/AttendEase-Server/commit/576e40f8615a5cfb224fe248a715107f6f6f61c6))
+- add nodemailer for email services ([48e3273](https://github.com/monsurcodes/AttendEase-Server/commit/48e327361c49d593ee717cb11c72a2b160b74e9a))
+- add other required schema models ([c7aecdc](https://github.com/monsurcodes/AttendEase-Server/commit/c7aecdc8dfb35c347810611a63e8270d42b93774))
+- add project-snapshot.md ([9f61950](https://github.com/monsurcodes/AttendEase-Server/commit/9f619505f90d92259400331d776aacbe502d49d6))
+- chnage sourceType from commonjs to module ([86e9a37](https://github.com/monsurcodes/AttendEase-Server/commit/86e9a375d1842b0e4fa99840206f3257c5ee576e))
+- fix endpoints ([408eb79](https://github.com/monsurcodes/AttendEase-Server/commit/408eb79ef16b36c3b0a9c750de4e4aa1fdb482bd))
+- get endpoint to fetch auth user data ([f738cd7](https://github.com/monsurcodes/AttendEase-Server/commit/f738cd79a01c208526c15ec41127ab904044daa5))
 
 ### Bug Fixes
 
-* better-auth instance type annotation failure ([3a047c9](https://github.com/monsurcodes/AttendEase-Server/commit/3a047c9341d39347f827671485283cc9e7d0f6d0))
+- better-auth instance type annotation failure ([3a047c9](https://github.com/monsurcodes/AttendEase-Server/commit/3a047c9341d39347f827671485283cc9e7d0f6d0))
 
 ### [0.2.1](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.0...v0.2.1) (2026-06-13)
 
