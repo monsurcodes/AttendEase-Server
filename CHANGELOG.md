@@ -4,22 +4,20 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.2.2](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.1...v0.2.2) (2026-06-14)
 
-
 ### Features
 
-* add '/' endpoint ([de624c4](https://github.com/monsurcodes/AttendEase-Server/commit/de624c4fc05b7e96e963df14d48a780ad58e85f8))
-* add email service ([576e40f](https://github.com/monsurcodes/AttendEase-Server/commit/576e40f8615a5cfb224fe248a715107f6f6f61c6))
-* add nodemailer for email services ([48e3273](https://github.com/monsurcodes/AttendEase-Server/commit/48e327361c49d593ee717cb11c72a2b160b74e9a))
-* add other required schema models ([c7aecdc](https://github.com/monsurcodes/AttendEase-Server/commit/c7aecdc8dfb35c347810611a63e8270d42b93774))
-* add project-snapshot.md ([9f61950](https://github.com/monsurcodes/AttendEase-Server/commit/9f619505f90d92259400331d776aacbe502d49d6))
-* chnage sourceType from commonjs to module ([86e9a37](https://github.com/monsurcodes/AttendEase-Server/commit/86e9a375d1842b0e4fa99840206f3257c5ee576e))
-* fix endpoints ([408eb79](https://github.com/monsurcodes/AttendEase-Server/commit/408eb79ef16b36c3b0a9c750de4e4aa1fdb482bd))
-* get endpoint to fetch auth user data ([f738cd7](https://github.com/monsurcodes/AttendEase-Server/commit/f738cd79a01c208526c15ec41127ab904044daa5))
-
+- add '/' endpoint ([de624c4](https://github.com/monsurcodes/AttendEase-Server/commit/de624c4fc05b7e96e963df14d48a780ad58e85f8))
+- add email service ([576e40f](https://github.com/monsurcodes/AttendEase-Server/commit/576e40f8615a5cfb224fe248a715107f6f6f61c6))
+- add nodemailer for email services ([48e3273](https://github.com/monsurcodes/AttendEase-Server/commit/48e327361c49d593ee717cb11c72a2b160b74e9a))
+- add other required schema models ([c7aecdc](https://github.com/monsurcodes/AttendEase-Server/commit/c7aecdc8dfb35c347810611a63e8270d42b93774))
+- add project-snapshot.md ([9f61950](https://github.com/monsurcodes/AttendEase-Server/commit/9f619505f90d92259400331d776aacbe502d49d6))
+- chnage sourceType from commonjs to module ([86e9a37](https://github.com/monsurcodes/AttendEase-Server/commit/86e9a375d1842b0e4fa99840206f3257c5ee576e))
+- fix endpoints ([408eb79](https://github.com/monsurcodes/AttendEase-Server/commit/408eb79ef16b36c3b0a9c750de4e4aa1fdb482bd))
+- get endpoint to fetch auth user data ([f738cd7](https://github.com/monsurcodes/AttendEase-Server/commit/f738cd79a01c208526c15ec41127ab904044daa5))
 
 ### Bug Fixes
 
-* better-auth instance type annotation failure ([3a047c9](https://github.com/monsurcodes/AttendEase-Server/commit/3a047c9341d39347f827671485283cc9e7d0f6d0))
+- better-auth instance type annotation failure ([3a047c9](https://github.com/monsurcodes/AttendEase-Server/commit/3a047c9341d39347f827671485283cc9e7d0f6d0))
 
 ### [0.2.1](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.0...v0.2.1) (2026-06-13)
 
