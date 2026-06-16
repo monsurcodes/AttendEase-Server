@@ -42,19 +42,10 @@ export class RoomService {
   async joinRoom(joinRoomDto: JoinRoomDto, session: UserSession) {
     const room = await this.prismaService.room.findUnique({
       where: { inviteCode: joinRoomDto.inviteCode },
-      include: { members: true },
     });
 
     if (!room) {
       throw new BadRequestException('Invalid invite code.');
-    }
-
-    const existingRoomMember = room.members.some(
-      (member) => member.userId === session.user.id,
-    );
-
-    if (existingRoomMember) {
-      throw new BadRequestException('Member already joined the room.');
     }
 
     const roomMember = await this.prismaService.roomMember.create({
