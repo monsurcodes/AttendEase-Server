@@ -67,7 +67,7 @@ export class RoomService {
     });
 
     if (!room) {
-      throw new BadRequestException('Invalid room id.');
+      throw new NotFoundException('Room with the given room id not found.');
     }
 
     const isRoomMember = room.members.some(
@@ -85,6 +85,8 @@ export class RoomService {
   }
 
   #generateInviteCode() {
+    // Date.now().toString(36).slice(-6).toUpperCase()
+    // crypto.randomBytes(4).toString('base64url').slice(0, 6).toUpperCase()
     return Date.now().toString(36).slice(-6).toUpperCase();
   }
 }
