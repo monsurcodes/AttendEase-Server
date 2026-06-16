@@ -39,7 +39,7 @@ export const auth = betterAuth({
 
   hooks: {},
 
-  trustedOrigins: [],
+  trustedOrigins: [process.env.FRONTEND_URL ?? ''],
 
   advanced: {
     disableOriginCheck: process.env.NODE_ENV !== 'production',
