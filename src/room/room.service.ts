@@ -96,14 +96,6 @@ export class RoomService {
   }
 
   #generateInviteCode() {
-    const code = Date.now().toString(36).slice(-6).toUpperCase();
-
-    if (!code) {
-      throw new BadRequestException(
-        'Failed to create 6-characters invite code.',
-      );
-    }
-
-    return code;
+    return Date.now().toString(36).slice(-6).toUpperCase();
   }
 }
