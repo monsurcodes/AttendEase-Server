@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.6](https://github.com/minkxx/AttendEase-Server/compare/v0.2.5...v0.2.6) (2026-06-18)
+
+
+### Features
+
+* add better-auth/expo package ([a8602c9](https://github.com/minkxx/AttendEase-Server/commit/a8602c900273688251adf98f8be5edbd8fac4407))
+* add workflow permissions ([33db91a](https://github.com/minkxx/AttendEase-Server/commit/33db91ac17b93ef14641c71706414dbb0a1dc9db))
+* better routing ([a57718b](https://github.com/minkxx/AttendEase-Server/commit/a57718b463ea0c978a639467572aeea337128da1))
+* expo configuration ([242672a](https://github.com/minkxx/AttendEase-Server/commit/242672af43ce263cbf52b826ff7c7745f90b6657))
+* lock file update ([dbb04bc](https://github.com/minkxx/AttendEase-Server/commit/dbb04bc122b48d77e2495ac00789f4ecfcd71752))
+* remove token based auth ([0a7ed33](https://github.com/minkxx/AttendEase-Server/commit/0a7ed33fe02e73739bc41eaf1098dae0334f1f86))
+
 ### [0.2.5](https://github.com/monsurcodes/AttendEase-Server/compare/v0.2.4...v0.2.5) (2026-06-17)
 
 
