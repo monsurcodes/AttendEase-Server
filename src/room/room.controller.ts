@@ -1,11 +1,9 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { RoomService } from './room.service';
 import { CreateRoomDto } from './dto/create-room.dto';
 import { Session, type UserSession } from '@thallesp/nestjs-better-auth';
-import { JoinRoomDto } from './dto/join-room.dto';
-import { ApproveMemberDto } from './dto/approve-member.dto';
 
-@Controller('room')
+@Controller('rooms')
 export class RoomController {
   constructor(private readonly roomService: RoomService) {}
 
@@ -17,12 +15,12 @@ export class RoomController {
     return await this.roomService.createRoom(createRoomDto, session);
   }
 
-  @Post('join')
+  @Post('join/:inviteCode')
   async joinRoom(
-    @Body() joinRoomDto: JoinRoomDto,
+    @Param('inviteCode') inviteCode: string,
     @Session() session: UserSession,
   ) {
-    return await this.roomService.joinRoom(joinRoomDto, session);
+    return await this.roomService.joinRoom({ inviteCode }, session);
   }
 
   @Get(':id')
@@ -30,11 +28,12 @@ export class RoomController {
     return await this.roomService.getRoom(id, session);
   }
 
-  @Post('member/approve')
+  @Patch(':roomId/members/:memberId/approve')
   async approveMember(
-    @Body() approveMemberDto: ApproveMemberDto,
+    @Param('roomId') roomId: string,
+    @Param('memberId') memberId: string,
     @Session() session: UserSession,
   ) {
-    return await this.roomService.approveMember(approveMemberDto, session);
+    return await this.roomService.approveMember({ roomId, memberId }, session);
   }
 }
