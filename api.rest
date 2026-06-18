@@ -1,6 +1,5 @@
 @BASE_URL=http://localhost:3000
 
-@accessToken=zFYWXuCH9tztoG5NOcxdrA5ZwpPOfpTQ.nkg7swcJ9EKcMRUms21fTcuOdOXb9dpBoqEan9uprbM=
 
 ### server health
 GET {{BASE_URL}}/health
@@ -29,17 +28,14 @@ Content-Type: application/json
 
 ### auth - sign out
 POST {{BASE_URL}}/api/auth/sign-out
-Authorization: Bearer {{accessToken}}
 
 
 ### user - get me
 GET {{BASE_URL}}/api/user
-Authorization: Bearer {{accessToken}}
 
 
 ### room - create room
-POST {{BASE_URL}}/api/room/create
-Authorization: Bearer {{accessToken}}
+POST {{BASE_URL}}/api/rooms/create
 Content-Type: application/json
 
 {
@@ -49,26 +45,14 @@ Content-Type: application/json
 
 
 ### room - join room
-POST {{BASE_URL}}/api/room/join
-Authorization: Bearer {{accessToken}}
-Content-Type: application/json
-
-{
-    "inviteCode": "FBN4LC"
-}
+POST {{BASE_URL}}/api/rooms/join/FBN4LC
 
 
 ### room - get room
-GET {{BASE_URL}}/api/room/f374ec3f-c60d-42b0-88c2-745afb8e84be
-Authorization: Bearer {{accessToken}}
+GET {{BASE_URL}}/api/rooms/f374ec3f-c60d-42b0-88c2-745afb8e84be
 
 
 ### room - approve member
-POST  {{BASE_URL}}/api/room/member/approve
-Authorization: Bearer {{accessToken}}
-Content-Type: application/json
+PATCH {{BASE_URL}}/api/rooms/f374ec3f-c60d-42b0-88c2-745afb8e84be/members/hRxYKC4tjRxomwDbWO0gQyG5V3T2zE7x/approve
 
-{
-    "roomId": "f374ec3f-c60d-42b0-88c2-745afb8e84be",
-    "memberId": "dMlfJ3dtSz5CcMovloUUUCv2b8K0C1m7"
-}
+
