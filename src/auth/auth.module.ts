@@ -6,7 +6,6 @@ import { EmailService } from '../email/email.service';
 import { betterAuth } from 'better-auth';
 import { prismaAdapter } from 'better-auth/adapters/prisma';
 import { PrismaClient } from '../common/generated/prisma/client';
-import { ConfigModule } from '@nestjs/config';
 import { DATABASE_CONNECTION } from '../database/database-connection';
 import { expo } from '@better-auth/expo';
 
@@ -19,7 +18,6 @@ const authExtensions = {
 @Module({
   imports: [
     EmailModule,
-    ConfigModule,
     NestjsBetterAuthModule.forRootAsync({
       useFactory: (prismaClient: PrismaClient) => ({
         auth: betterAuth({
