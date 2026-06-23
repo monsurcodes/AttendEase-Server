@@ -9,6 +9,8 @@ import { validateEnv } from './common/config/env.config';
 import { TimetableModule } from './timetable/timetable.module';
 import { DatabaseModule } from './database/database.module';
 import { AttendanceModule } from './attendance/attendance.module';
+import { PollModule } from './poll/poll.module';
+import { RedisModule } from './redis/redis.module';
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { AttendanceModule } from './attendance/attendance.module';
     RoomModule,
     TimetableModule,
     AttendanceModule,
+    PollModule,
+    RedisModule,
   ],
   controllers: [AppController],
   providers: [AppService],
