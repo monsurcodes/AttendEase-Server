@@ -1,4 +1,4 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { DATABASE_CONNECTION } from '../database/database-connection';
 import { PrismaClient } from '../common/generated/prisma/client';
 import { CreateAttendanceDto } from './dto/create-attendance.dto';
@@ -48,10 +48,6 @@ export class AttendanceService {
       where: { userId: session.user.id },
     });
 
-    if (!attendances) {
-      throw new NotFoundException('Attendance for this user not found.');
-    }
-
     return {
       message: 'Attendances fetched successfully.',
       attendances,
@@ -62,12 +58,6 @@ export class AttendanceService {
     const attendances = await this.prismaService.attendance.findMany({
       where: { userId: session.user.id, timetableId },
     });
-
-    if (!attendances) {
-      throw new NotFoundException(
-        'Attendance for this user not found in this timetable.',
-      );
-    }
 
     return {
       message: 'Attendances fetched successfully.',
