@@ -1,6 +1,7 @@
 import { Body, Controller, Param, Post } from '@nestjs/common';
 import { PollService } from './poll.service';
 import { CreatePollBodyDto } from './dto/create-poll.dto';
+import { Session, type UserSession } from '@thallesp/nestjs-better-auth';
 
 @Controller('polls')
 export class PollController {
@@ -11,7 +12,11 @@ export class PollController {
     @Param('roomId') roomId: string,
     @Param('timetableId') timetableId: string,
     @Body() body: CreatePollBodyDto,
+    @Session() session: UserSession,
   ) {
-    return await this.pollService.createPoll({ roomId, timetableId, ...body });
+    return await this.pollService.createPoll(
+      { roomId, timetableId, ...body },
+      session,
+    );
   }
 }
