@@ -2,6 +2,7 @@ import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTimetableDto } from './dto/create-timetable.dto';
 import { DATABASE_CONNECTION } from '../database/database-connection';
 import { PrismaClient } from '../common/generated/prisma/client';
+import { type UserSession } from '@thallesp/nestjs-better-auth';
 
 @Injectable()
 export class TimetableService {
@@ -9,7 +10,20 @@ export class TimetableService {
     @Inject(DATABASE_CONNECTION) private prismaService: PrismaClient,
   ) {}
 
-  async createTimetable(createTimetableDto: CreateTimetableDto) {
+  async createTimetable(
+    createTimetableDto: CreateTimetableDto,
+    session: UserSession,
+  ) {
+    const room = await this.prismaService.room.findUnique({
+      where: { id: createTimetableDto.roomId, adminId: session.user.id },
+    });
+
+    if (!room) {
+      return {
+        message: 'You are not admin in this room to create a timetable.',
+      };
+    }
+
     const timetable = await this.prismaService.timetable.create({
       data: createTimetableDto,
     });
